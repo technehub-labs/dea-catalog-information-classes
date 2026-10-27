@@ -1,0 +1,11 @@
+# Regulatory-regime classifications (CR-IC-CAT-02 binding axis 2)
+version: 1.0.0
+values:
+- id: PII
+  definition: Personally identifiable information; governed by privacy statutes (e.g. GDPR, CCPA).
+- id: PHI
+  definition: Protected health information; governed by health-privacy regimes (e.g. HIPAA).
+- id: PCI
+  definition: Cardholder data; governed by the PCI DSS regime.
+- id: none
+  definition: No external regulatory regime applies. Legal only as the sole entry of a record's regulatory_regime list.

@@ -38,6 +38,8 @@ A record is classified on two axes. The axes are the admission test: a record th
 | **Sensitivity** | What level of protection does the class require? | public, internal, confidential, restricted |
 | **Regulatory regime** | Which regulatory regimes govern the class? | PII, PHI, PCI, none |
 
+The vocabularies are ratified artifacts under `classifications/` (`CR-IC-CAT-02`), one YAML file per axis, and are kept in lockstep with the schema enums by the taxonomy gate (`scripts/check_taxonomy.py`).
+
 **Mutual exclusivity.** A record occupies exactly one cell on the sensitivity axis. Two records that would occupy the same two-tuple are either duplicates or genuinely distinct records that the axes fail to distinguish; the second case is a finding against the axes, not against the axes, and must be raised as a CR against the taxonomy. The regulatory-regime axis is multi-valued: one class may be governed by more than one regime (for example, a class covering both PII and PHI).
 
 ## 4. Admission criteria
@@ -82,14 +84,14 @@ References between catalogues are by canonical identifier, never by URL or repos
 | D-5 | `handling_requirements` are mandatory controls, not descriptive prose | Adopted (this methods CR) |
 | D-6 | The crosswalk to the class lives on the mapped entity's side | Adopted (this CR) |
 | D-7 | Population is deferred to a dedicated population CR | Adopted (this CR) |
-| D-8 | Taxonomy refinement (per-sector classes, per-jurisdiction regimes) is out of scope until the taxonomy CR | Adopted (this CR) |
+| D-8 | Taxonomy refinement (per-sector classes, per-jurisdiction regimes) is out of scope until the taxonomy CR | Superseded by `CR-IC-CAT-02` (landed; refinement still requires a CR) |
 
 ## 8. Roadmap
 
 | Phase | Change request | Scope |
 |---|---|---|
-| Foundation (this CR) | `CR-IC-CAT-01` | Pointer gates, schema projection, FOUNDATIONS, five CI gates |
-| Taxonomy | `CR-IC-CAT-02` | Ratify per-sector class refinements, jurisdiction-specific regime values |
+| Foundation | `CR-IC-CAT-01` | Pointer gates, schema projection, FOUNDATIONS, five CI gates |
+| Taxonomy (landed) | `CR-IC-CAT-02` | Ratify per-sector class refinements, jurisdiction-specific regime values |
 | Record documentation standard | `CR-IC-CAT-03` | Define the evidence standard for admitted records |
 | Population | `CR-IC-CAT-04` | Admit the initial class records |
 | Cross-catalogue integration | `CR-IC-CAT-05` | Wire `dea:maps-to` crosswalk validation into the gate suite |

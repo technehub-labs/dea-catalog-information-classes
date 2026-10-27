@@ -17,7 +17,7 @@ This repository currently contains the **catalogue method** and **no records**. 
 | Repository | planned, no records |
 | Metamodel pointer | pinned to OpenDEAM v0.2.1 |
 | Schema projection | landed (mirrors the metamodel entity schema) |
-| Taxonomy | deferred to `CR-IC-CAT-02` |
+| Taxonomy | landed (`CR-IC-CAT-02`): vocabulary files under `classifications/`, gate-enforced against the schema enums |
 | Record documentation standard | deferred to `CR-IC-CAT-03` |
 | Population | deferred to `CR-IC-CAT-04` |
 | Cross-catalogue integration | deferred to `CR-IC-CAT-05` |
@@ -71,6 +71,9 @@ dea-catalog-information-classes/
 │   ├── check_schema_projection.py   ← Gate 3: schema projection
 │   ├── check_writing_rules.py       ← Gate 4: D-004/D-005 writing rules
 │   └── check_record_posture.py      ← Gate 5: records-directory posture
+├── classifications/                 ← classification vocabularies (CR-IC-CAT-02)
+│   ├── sensitivity-classifications.yaml
+│   └── regulatory-regime-classifications.yaml
 ├── entities/
 │   └── v1-alpha/                    ← records go here (population gated)
 └── .github/workflows/
@@ -88,6 +91,7 @@ python3 scripts/check_pointer.py
 python3 scripts/check_schema_projection.py
 python3 scripts/check_writing_rules.py
 python3 scripts/check_record_posture.py
+python3 scripts/check_taxonomy.py
 ```
 
 ## Contributing
