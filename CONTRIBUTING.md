@@ -1,52 +1,39 @@
-# Contributing to `dea-catalog-information-classes`
+# Contributing to the Information Class catalogue
 
-Minimal. The cardinal rules govern the only contribution shape that
-matters for this repository.
+## Before you propose a record
 
-## Authorship
+Population is gated. No record may be admitted before `CR-IC-CAT-02` ratifies
+the classification taxonomy and `CR-IC-CAT-03` defines the documentation
+standard. A pull request that adds a record before both land will fail the
+record-posture gate.
 
-Every authorship-bearing field in this repository must carry
-`Emmanuel A. Otchere` (or, for org-level CFF entries, `TechNeHub Labs`).
-The string `Coder`, `Agent`, `Hermes`, `Claude`, `GPT`, `Cline`, `OpenAI`,
-`MiniMax`, `MiniMax-M3`, or any other agent/tool name is forbidden in
-any authorship-bearing field of any published artifact.
+Read [`docs/FOUNDATIONS.md`](./docs/FOUNDATIONS.md) first. It carries the
+cardinal scope, the classification axes, the admission criteria, and the
+decision register that later change requests cite by number.
 
-This rule is enforced by gate [32] (`scripts/check_authorship.py`,
-blocking). It is data-driven from
-`reconciliation/authorship-fields.yaml`. The full rule statement lives
-in `docs/governance/cardinal-rules.md`.
+## The one test
 
-If your contribution introduces a new authorship-bearing field, extend
-the registry in the same PR; the gate will block the change otherwise.
+> Is the record a class that other records can be mapped to via `dea:maps-to`?
 
-## Entity records
+If no, you are describing a data entity, an information asset, or a business
+object. That record belongs in the corresponding catalogue, not here.
 
-Each record is a YAML file under `entities/v1-alpha/` and must:
+## Change control
 
-- carry a canonical `id` matching `^dea:information-class-[a-z0-9-]+$`,
-- declare `type: InformationClass`,
-- satisfy the envelope in `reconciliation/entity-system-registry.yaml`
-  (ES-001..ES-005),
-- validate against `schemas/information-class.schema.json`,
-- carry `provenance.change_history` referencing the landing CR
-  (`cr`, `date`, `change`).
+| Artefact | Authority |
+|---|---|
+| `metamodel-pointer.yaml` | OpenDEAM root model. Never hand-edited; a finding from the pointer gate means the allocation drifted |
+| `schemas/*.json` | This repository, by CR, mirroring the metamodel |
+| Records | This repository, by CR, gated on the taxonomy CR |
 
-`metamodel-pointer.yaml` is auto-generated from the OpenDEAM root model —
-do not edit it manually; allocation changes go through
-[dea-architecture-framework](https://github.com/technehub-labs/dea-architecture-framework).
+## Local validation
 
-## How to land work
+Run the gates before opening a pull request. They are the same scripts CI runs.
 
-1. Open a `feature/...`, `fix/...`, or `refactor/...` branch.
-2. Develop, test, commit.
-3. Open a PR; CI runs the conformance gates (allocation, entity system,
-   authorship, entry schema). Address any failures before requesting
-   review.
-4. Squash-merge on approval; the branch is auto-deleted.
-
-## Cardinal-rules reference
-
-- [docs/governance/cardinal-rules.md](docs/governance/cardinal-rules.md)
-- `reconciliation/authorship-fields.yaml`
-- `reconciliation/entity-system-registry.yaml`
-- `scripts/check_authorship.py` (gate [32])
+```
+python3 scripts/check_parse.py
+python3 scripts/check_pointer.py
+python3 scripts/check_schema_projection.py
+python3 scripts/check_writing_rules.py
+python3 scripts/check_record_posture.py
+```
