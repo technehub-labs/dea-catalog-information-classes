@@ -1,0 +1,30 @@
+# Cardinal authorship-field registry (CR-BP-118b; this repo's slice).
+# Adding a new field here is a CR-level change; do not edit casually.
+# This repo carries CR doc metadata only at this time; if entity
+# records are added in the future carrying an authorship-bearing
+# field (e.g. `audit.author`), extend the fields list with a new
+# per-glob entry.
+
+fields:
+  - path: "**Owner**"                # CR doc metadata; first-30-lines
+    file_glob: "change-requests/CR-*.md"
+    kind: "metadata"
+  - path: "**Author**"               # CR doc metadata; first-30-lines
+    file_glob: "change-requests/CR-*.md"
+    kind: "metadata"
+
+allowlist:
+  - "Emmanuel A. Otchere"
+  - "TechNeHub Labs"
+
+# Agent / tool names that may never appear in an authorship-bearing field.
+denylist:
+  - "Coder"
+  - "Agent"
+  - "Hermes"
+  - "Claude"
+  - "GPT"
+  - "Cline"
+  - "OpenAI"
+  - "MiniMax"
+  - "MiniMax-M3"

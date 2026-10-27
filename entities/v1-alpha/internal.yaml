@@ -1,0 +1,16 @@
+id: dea:information-class-internal
+type: InformationClass
+name: Internal
+definition: Information intended for enterprise-internal use; disclosure causes limited harm.
+sensitivity: internal
+regulatory_regime: [none]
+handling_requirements:
+  - Access limited to enterprise personnel and authorized parties.
+retention: Per records schedule.
+lifecycle:
+  status: active
+provenance:
+  change_history:
+    - cr: CR-IC-01
+      date: "2026-02-11"
+      change: Initial seed entry.

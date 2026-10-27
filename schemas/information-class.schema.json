@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/technehub-labs/dea-catalog-information-classes/blob/main/schemas/information-class.schema.json",
+  "title": "Information Class",
+  "description": "A classification of information by sensitivity and regulatory regime (PII, PHI, PCI).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "type", "name", "definition", "sensitivity", "regulatory_regime", "lifecycle", "provenance"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^dea:(entity-)?information-class-[a-z0-9-]+$",
+      "description": "Canonical entity id. Legacy records may carry the dea:entity-information-class- prefix."
+    },
+    "type": {
+      "const": "InformationClass",
+      "description": "Entity type per the DEA Metamodel (dea:InformationClass)."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "definition": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sensitivity": {
+      "type": "string",
+      "enum": ["public", "internal", "confidential", "restricted"]
+    },
+    "regulatory_regime": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["PII", "PHI", "PCI", "none"]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "handling_requirements": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "retention": {
+      "type": "string"
+    },
+    "lifecycle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["planned", "active", "deprecated"]
+        }
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "target"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["dea:maps-to"]
+          },
+          "target": {
+            "type": "string"
+          },
+          "mapping_kind": {
+            "type": "string",
+            "enum": ["equivalent", "broader", "narrower", "related", "traceability", "external-crosswalk"]
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["change_history"],
+      "properties": {
+        "change_history": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["cr", "date", "change"],
+            "properties": {
+              "cr": {"type": "string"},
+              "date": {"type": "string", "format": "date"},
+              "change": {"type": "string"}
+            }
+          }
+        }
+      }
+    }
+  }
+}

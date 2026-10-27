@@ -1,0 +1,19 @@
+id: dea:information-class-pci
+type: InformationClass
+name: Cardholder Data (PCI)
+definition: Cardholder account data and sensitive authentication data covered by the PCI DSS regime.
+sensitivity: restricted
+regulatory_regime: [PCI]
+handling_requirements:
+  - Storage of sensitive authentication data prohibited after authorization.
+  - Access restricted to roles with business justification; assigned unique ids.
+  - Encryption in transit and at rest over public networks.
+  - Quarterly vulnerability scans on systems in scope.
+retention: Per PCI DSS and card-brand retention limits.
+lifecycle:
+  status: active
+provenance:
+  change_history:
+    - cr: CR-IC-01
+      date: "2026-02-11"
+      change: Initial seed entry.

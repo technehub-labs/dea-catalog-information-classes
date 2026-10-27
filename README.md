@@ -1,24 +1,27 @@
 # Information Class
 
-> A classification of data entities by sensitivity and protection requirements.
+> A classification of information by sensitivity and regulatory regime (PII, PHI, PCI).
 
-**Layer:** L4 · **Entity:** `IC` · **Metamodel:** [v2.0.0-alpha](https://github.com/technehub-labs/dea-metamodel)
+**Layer:** L4 · **Entity:** `IC` · **Metamodel:** [OpenDEAM v0.2.1](https://github.com/technehub-labs/dea-metamodel)
 
 [![View in Metamodel Explorer](https://img.shields.io/badge/Metamodel%20Explorer-View%20Entity-2C3E50?style=shield)](https://technehub-labs.github.io/metamodel/?entity=IC)
 
 ## Status
 
-This is a **scaffold** repository — created during the Phase 1 metamodel v2 rollout.
-Content population is planned for a subsequent phase.
+Content population in progress. The catalog carries seed
+Information Class records under `entities/v1-alpha/` and the full
+conformance gate suite (allocation, entity system, authorship,
+entry schema) in CI.
 
 ## Entity Definition
 
 | Field | Value |
 |-------|-------|
-| Entity ID | `dea:entity-ic` |
+| Entity ID | `dea:entity-information-class` |
 | Class Alias | `IC` |
 | Layer | `L4` |
-| Metamodel Version | v2.0.0-alpha |
+| Building Block | `L4-data-foundation` |
+| Metamodel Version | v0.2.1 |
 
 ## Catalog Structure
 
@@ -26,14 +29,26 @@ Content population is planned for a subsequent phase.
 dea-catalog-information-classes/
 ├── metamodel-pointer.yaml   ← entity mapping (do not edit manually)
 ├── entities/
-│   └── v1-alpha/          ← catalog entries go here
-│       └── README.md
-├── schemas/                ← JSON Schema for this entity type
-│   └── entity.schema.json
-└── .github/
-    └── workflows/
-        └── ci.yml         ← validates entries against schema
+│   └── v1-alpha/            ← Information Class records
+├── schemas/
+│   └── information-class.schema.json
+├── reconciliation/          ← gate registries (entity system, authorship)
+├── scripts/                 ← conformance gates
+├── change-requests/         ← CR records
+├── docs/governance/         ← cardinal rules
+└── .github/workflows/       ← allocation, entity-system, authorship, entry validation
 ```
+
+## Seed Classes
+
+| Class | Sensitivity | Regulatory regime |
+|-------|-------------|-------------------|
+| Public | public | none |
+| Internal | internal | none |
+| Confidential | confidential | none |
+| PII | restricted | PII |
+| PHI | restricted | PHI |
+| PCI | restricted | PCI |
 
 ## Contributing
 
