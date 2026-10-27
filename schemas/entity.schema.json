@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://technehub-labs.github.io/dea-catalog-information-classes/schemas/entity.schema.json",
+  "metamodel_source": "https://github.com/technehub-labs/dea-metamodel/blob/main/schemas/entities/information-class.json",
+  "metamodel_version": "0.9.0",
+  "title": "InformationClass (catalogue instance schema)",
+  "description": "Catalogue-instance projection of the metamodel InformationClass entity. The normative field set is defined by the metamodel schema; this file mirrors it and adds only the catalogue-instance layer (classification axes, governance, cross-catalogue references). Do not widen a normative enum here to accept a value the metamodel does not define: fix the record instead. A catalogue that diverges from the metamodel is a second source of truth.",
+  "type": "object",
+  "required": ["id", "type", "name", "version", "lifecycle_status"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^dea:information-class-[a-z0-9-]+$",
+      "description": "OpenDEAM-local identifier. The metamodel pattern is the general ^[a-z][a-z0-9-]*:[a-z0-9-]+$; this catalogue narrows it to the InformationClass entity namespace so a record cannot be filed under another entity's identifier form."
+    },
+    "type": {
+      "type": "string",
+      "const": "InformationClass"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 2000
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "lifecycle_status": {
+      "type": "string",
+      "enum": ["proposed", "planned", "active", "deprecated", "retired"],
+      "description": "CR-3R: lifecycle state from metamodel/vocabularies/lifecycle.yaml."
+    },
+
+    "external_references": {
+      "type": "array",
+      "description": "Identifiers in external systems. Never a substitute for the OpenDEAM id (E004).",
+      "items": {
+        "type": "object",
+        "required": ["system", "identifier"],
+        "properties": {
+          "system": { "type": "string" },
+          "identifier": { "type": "string" }
+        }
+      }
+    },
+
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+
+    "sensitivity": {
+      "type": "string",
+      "enum": ["public", "internal", "confidential", "restricted"],
+      "description": "Sensitivity axis. One value per record; the classification axes are the admission test."
+    },
+    "regulatory_regime": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": ["PII", "PHI", "PCI", "none"]
+      },
+      "description": "Regulatory-regime axis. A record may be governed by more than one regime."
+    },
+    "handling_requirements": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Catalogue-instance layer. Mandatory controls implied by the classification."
+    },
+    "retention": {
+      "type": "string",
+      "description": "Catalogue-instance layer. Retention rule or schedule the record's custodians apply."
+    },
+
+    "governance": {
+      "type": "object",
+      "description": "Catalogue-instance layer. Ownership and review state.",
+      "required": ["functional_owner", "steward", "approval_status"],
+      "properties": {
+        "functional_owner": { "type": "string" },
+        "steward": { "type": "string" },
+        "approval_status": {
+          "type": "string",
+          "enum": ["proposed", "under_review", "approved"]
+        },
+        "review_date": { "type": "string" },
+        "source_and_evidence": { "type": "string" }
+      }
+    },
+
+    "metadata": { "type": "object" }
+  }
+}
