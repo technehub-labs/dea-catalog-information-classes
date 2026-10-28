@@ -71,7 +71,7 @@ A finding from the pointer gate means the allocation drifted. Fix the allocation
 
 ## 6. Cross-catalogue reference policy
 
-References between catalogues are by canonical identifier, never by URL or repository name. The `dea:maps-to` relationship (OpenDEAM v0.2.1, section on traceability) is the sole means by which an entity in another catalogue declares that it falls under a class recorded here. The crosswalk itself is recorded on the mapped entity's side; this catalogue neither hosts nor validates crosswalks for entities it does not own.
+References between catalogues are by canonical identifier, never by URL or repository name. The `dea:maps-to` relationship (OpenDEAM v0.2.1, section on traceability) is the sole means by which an entity in another catalogue declares that it falls under a class recorded here. The crosswalk itself is recorded on the mapped entity's side; this catalogue neither hosts nor validates crosswalks for entities it does not own. The class side of the contract is landed (`CR-IC-CAT-05`): records may catalogue the inverse via `relationships.mapped_from`, crosswalk proposals from other catalogues queue in `reconciliation/crosswalk-inbox.yaml`, and Gate 8 (`scripts/check_crosswalk.py`) validates both.
 
 ## 7. Decision-points register
 

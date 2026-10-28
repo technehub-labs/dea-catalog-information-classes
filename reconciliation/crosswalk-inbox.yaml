@@ -1,0 +1,8 @@
+# Crosswalk intake queue (CR-IC-CAT-05).
+# Entries proposed by other catalogues whose records declare
+# dea:maps-to into this catalogue. Each entry cites the proposing CR
+# and targets a canonical record here. Gate 8 (check_crosswalk.py)
+# validates every entry: target must resolve, cr must be present.
+# Promotion of an inbox entry onto a record's relationships.mapped_from
+# happens in the landing CR of the proposing catalogue's change.
+entries: []

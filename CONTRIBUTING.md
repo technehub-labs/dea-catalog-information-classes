@@ -40,4 +40,5 @@ python3 scripts/check_writing_rules.py
 python3 scripts/check_record_posture.py
 python3 scripts/check_taxonomy.py
 python3 scripts/check_record_documentation.py
+python3 scripts/check_crosswalk.py
 ```

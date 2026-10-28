@@ -96,6 +96,19 @@
       }
     },
 
-    "metadata": { "type": "object" }
+    "metadata": { "type": "object" },
+
+    "relationships": {
+      "type": "object",
+      "description": "Cross-catalogue crosswalk (CR-IC-CAT-05). Per FOUNDATIONS D-6 the dea:maps-to crosswalk is recorded on the mapped entity's side; this field carries the inverse (dea:mapped-from) for cataloguing and query, and is validated by Gate 8.",
+      "additionalProperties": false,
+      "properties": {
+        "mapped_from": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Canonical ids of entities in other catalogues that map to this class via dea:maps-to."
+        }
+      }
+    }
   }
 }
