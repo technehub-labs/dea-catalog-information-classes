@@ -18,8 +18,8 @@ This repository currently contains the **catalogue method** and **no records**. 
 | Metamodel pointer | pinned to OpenDEAM v0.2.1 |
 | Schema projection | landed (mirrors the metamodel entity schema) |
 | Taxonomy | landed (`CR-IC-CAT-02`): vocabulary files under `classifications/`, gate-enforced against the schema enums |
-| Record documentation standard | deferred to `CR-IC-CAT-03` |
-| Population | deferred to `CR-IC-CAT-04` |
+| Record documentation standard | landed (`CR-IC-CAT-03`): `docs/RECORD-STANDARD.md`, enforced by Gate 7 |
+| Population | deferred to `CR-IC-CAT-04` (prerequisites complete) |
 | Cross-catalogue integration | deferred to `CR-IC-CAT-05` |
 
 ## What this catalogue is
@@ -62,7 +62,8 @@ The catalogue of **classes**, not of data. An Information Class record names a b
 dea-catalog-information-classes/
 ├── metamodel-pointer.yaml           ← entity allocation (do not edit manually)
 ├── docs/
-│   └── FOUNDATIONS.md               ← catalogue method
+│   ├── FOUNDATIONS.md               ← catalogue method
+│   └── RECORD-STANDARD.md           ← record documentation standard (CR-IC-CAT-03)
 ├── schemas/
 │   └── entity.schema.json           ← projection of the metamodel entity schema
 ├── scripts/
@@ -70,7 +71,9 @@ dea-catalog-information-classes/
 │   ├── check_pointer.py             ← Gate 2: pointer consistency
 │   ├── check_schema_projection.py   ← Gate 3: schema projection
 │   ├── check_writing_rules.py       ← Gate 4: D-004/D-005 writing rules
-│   └── check_record_posture.py      ← Gate 5: records-directory posture
+│   ├── check_record_posture.py      ← Gate 5: records-directory posture
+│   ├── check_taxonomy.py            ← Gate 6: classification taxonomy
+│   └── check_record_documentation.py ← Gate 7: record documentation standard
 ├── classifications/                 ← classification vocabularies (CR-IC-CAT-02)
 │   ├── sensitivity-classifications.yaml
 │   └── regulatory-regime-classifications.yaml
@@ -78,7 +81,7 @@ dea-catalog-information-classes/
 │   └── v1-alpha/                    ← records go here (population gated)
 └── .github/workflows/
     ├── validate-allocation.yml      ← OpenDEAM allocation validator (root model)
-    └── validate-catalogue.yml       ← the five catalogue gates
+    └── validate-catalogue.yml       ← the seven catalogue gates
 ```
 
 ## Local validation
@@ -92,6 +95,7 @@ python3 scripts/check_schema_projection.py
 python3 scripts/check_writing_rules.py
 python3 scripts/check_record_posture.py
 python3 scripts/check_taxonomy.py
+python3 scripts/check_record_documentation.py
 ```
 
 ## Contributing

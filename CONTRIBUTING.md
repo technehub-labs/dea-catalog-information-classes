@@ -2,10 +2,12 @@
 
 ## Before you propose a record
 
-Population is gated. No record may be admitted before `CR-IC-CAT-03` defines
-the documentation standard. The classification taxonomy was ratified by
-`CR-IC-CAT-02`; a pull request that adds a record before `CR-IC-CAT-03`
-lands will fail the record-posture gate.
+Population is gated. The classification taxonomy was ratified by
+`CR-IC-CAT-02` and the record documentation standard by `CR-IC-CAT-03`.
+A pull request that adds a record before the population CR
+(`CR-IC-CAT-04`) lands will fail the record-posture gate. A record must
+satisfy `docs/RECORD-STANDARD.md` (R-1..R-5 and the per-record README
+contract) to pass the documentation gate.
 
 Read [`docs/FOUNDATIONS.md`](./docs/FOUNDATIONS.md) first. It carries the
 cardinal scope, the classification axes, the admission criteria, and the
@@ -37,4 +39,5 @@ python3 scripts/check_schema_projection.py
 python3 scripts/check_writing_rules.py
 python3 scripts/check_record_posture.py
 python3 scripts/check_taxonomy.py
+python3 scripts/check_record_documentation.py
 ```

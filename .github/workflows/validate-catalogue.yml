@@ -42,3 +42,8 @@ jobs:
         run: |
           set -euo pipefail
           python3 scripts/check_taxonomy.py
+
+      - name: "Step 7: Record documentation standard"
+        run: |
+          set -euo pipefail
+          python3 scripts/check_record_documentation.py
