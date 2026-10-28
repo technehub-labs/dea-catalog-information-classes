@@ -37,3 +37,8 @@ jobs:
         run: |
           set -euo pipefail
           python3 scripts/check_record_posture.py
+
+      - name: "Step 6: Classification taxonomy"
+        run: |
+          set -euo pipefail
+          python3 scripts/check_taxonomy.py

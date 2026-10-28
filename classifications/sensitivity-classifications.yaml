@@ -1,0 +1,11 @@
+# Sensitivity classifications (CR-IC-CAT-02 binding axis 1)
+version: 1.0.0
+values:
+- id: public
+  definition: Information approved for unrestricted disclosure; disclosure causes no harm.
+- id: internal
+  definition: Information intended for enterprise-internal use; disclosure causes limited harm.
+- id: confidential
+  definition: Information whose disclosure causes material enterprise harm; access on a need-to-know basis.
+- id: restricted
+  definition: Information whose disclosure causes severe harm (regulatory, contractual, or safety); carries mandatory controls.
