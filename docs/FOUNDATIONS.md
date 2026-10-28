@@ -44,7 +44,7 @@ The vocabularies are ratified artifacts under `classifications/` (`CR-IC-CAT-02`
 
 ## 4. Admission criteria
 
-A record may be admitted only when all of the following hold:
+The documentation standard for admitted records is `docs/RECORD-STANDARD.md` (`CR-IC-CAT-03`); the semantic rules R-1..R-5 there refine the criteria below, and Gate 7 enforces them.
 
 1. It is a classification of information, not a data entity, per the section 1 boundary test.
 2. Its `sensitivity` value is exactly one of the four bands in the schema enum.
@@ -92,6 +92,6 @@ References between catalogues are by canonical identifier, never by URL or repos
 |---|---|---|
 | Foundation | `CR-IC-CAT-01` | Pointer gates, schema projection, FOUNDATIONS, five CI gates |
 | Taxonomy (landed) | `CR-IC-CAT-02` | Ratify per-sector class refinements, jurisdiction-specific regime values |
-| Record documentation standard | `CR-IC-CAT-03` | Define the evidence standard for admitted records |
+| Record documentation standard (landed) | `CR-IC-CAT-03` | Define the evidence standard for admitted records |
 | Population | `CR-IC-CAT-04` | Admit the initial class records |
 | Cross-catalogue integration | `CR-IC-CAT-05` | Wire `dea:maps-to` crosswalk validation into the gate suite |

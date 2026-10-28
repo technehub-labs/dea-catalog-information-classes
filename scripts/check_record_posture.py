@@ -6,8 +6,9 @@ says what it means: if no records exist, the catalogue must be marked
 planned, and if records appear before the population CR, the schema,
 taxonomy and reference gates must be present.
 
-It does not validate records. The population CR replaces this gate with a
-real record validator.
+It does not validate records. The documentation gate (Gate 7) validates
+records against the standard in docs/RECORD-STANDARD.md; the population
+CR (CR-IC-CAT-04) admits the first records.
 """
 
 from __future__ import annotations
@@ -24,9 +25,8 @@ RECORD_GLOB = "entities/v1-alpha/**/*.yaml"
 
 REQUIRED_POPULATION_GATES = (
     "scripts/check_schema_projection.py",
-    "scripts/check_record_taxonomy.py",
-    "scripts/check_record_evidence.py",
-    "scripts/check_reference_integrity.py",
+    "scripts/check_taxonomy.py",
+    "scripts/check_record_documentation.py",
 )
 
 
