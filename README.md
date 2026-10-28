@@ -84,7 +84,8 @@ dea-catalog-information-classes/
 │   ├── check_writing_rules.py       ← Gate 4: D-004/D-005 writing rules
 │   ├── check_record_posture.py      ← Gate 5: records-directory posture
 │   ├── check_taxonomy.py            ← Gate 6: classification taxonomy
-│   └── check_record_documentation.py ← Gate 7: record documentation standard
+│   ├── check_record_documentation.py ← Gate 7: record documentation standard
+│   └── check_crosswalk.py           ← Gate 8: cross-catalogue crosswalk
 ├── classifications/                 ← classification vocabularies (CR-IC-CAT-02)
 │   ├── sensitivity-classifications.yaml
 │   └── regulatory-regime-classifications.yaml
@@ -92,7 +93,7 @@ dea-catalog-information-classes/
 │   └── v1-alpha/                    ← records go here (population gated)
 └── .github/workflows/
     ├── validate-allocation.yml      ← OpenDEAM allocation validator (root model)
-    └── validate-catalogue.yml       ← the seven catalogue gates
+    └── validate-catalogue.yml       ← the eight catalogue gates
 ```
 
 ## Local validation

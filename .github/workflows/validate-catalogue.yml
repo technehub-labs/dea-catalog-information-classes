@@ -47,3 +47,8 @@ jobs:
         run: |
           set -euo pipefail
           python3 scripts/check_record_documentation.py
+
+      - name: "Step 8: Cross-catalogue crosswalk"
+        run: |
+          set -euo pipefail
+          python3 scripts/check_crosswalk.py

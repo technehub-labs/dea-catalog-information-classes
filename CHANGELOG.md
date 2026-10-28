@@ -9,6 +9,10 @@ Allocation is recorded in the OpenDEAM root model; see `metamodel-pointer.yaml`.
 
 ### Added
 
+- `CR-IC-CAT-05`: cross-catalogue crosswalk validation. Optional `relationships.mapped_from[]` added to the schema (inverse of `dea:maps-to`), `reconciliation/crosswalk-inbox.yaml` intake queue for crosswalks proposed by other catalogues, and Gate 8 (`scripts/check_crosswalk.py`) validating id form, external-only resolution, and inbox entries.
+
+### Added
+
 - `CR-IC-CAT-04`: initial population. Six Information Class records admitted under the record standard: public, internal, confidential, PII, PHI, PCI. Each carries a canonical id, schema-valid fields, R-1..R-5 conformance, and a per-record README.
 
 ### Added
