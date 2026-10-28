@@ -1,0 +1,22 @@
+id: dea:information-class-pii
+type: InformationClass
+name: Personally Identifiable Information (PII)
+description: Information that identifies a natural person, or is capable of doing so when combined with other data. Privacy statutes govern its processing, subject rights, and breach notification.
+version: 1.0.0
+lifecycle_status: active
+sensitivity: restricted
+regulatory_regime: [PII]
+handling_requirements:
+  - A lawful basis is required for every processing operation.
+  - Data minimization and purpose limitation apply to all uses.
+  - Data-subject rights (access, erasure, portability) must be supportable.
+  - Encryption in transit and at rest.
+  - Breach-notification readiness within statutory deadlines.
+retention: Per the applicable privacy statute's limitation periods and the enterprise privacy-retention schedule.
+governance:
+  functional_owner: Emmanuel A. Otchere
+  steward: Emmanuel A. Otchere
+  approval_status: approved
+  source_and_evidence: "Privacy statutes applicable to the operating jurisdictions (e.g. GDPR, CCPA); internal privacy policy; owner: Data Protection Officer."
+metadata:
+  established_by: CR-IC-CAT-04

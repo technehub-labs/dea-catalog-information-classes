@@ -1,0 +1,19 @@
+id: dea:information-class-internal
+type: InformationClass
+name: Internal
+description: Information intended for enterprise-internal use. Disclosure causes limited harm; the class covers operational material not approved for public release.
+version: 1.0.0
+lifecycle_status: active
+sensitivity: internal
+regulatory_regime: [none]
+handling_requirements:
+  - Access limited to enterprise personnel and authorized third parties.
+  - Disclosure outside the enterprise requires the owner's approval.
+retention: Per the enterprise records-retention schedule.
+governance:
+  functional_owner: Emmanuel A. Otchere
+  steward: Emmanuel A. Otchere
+  approval_status: approved
+  source_and_evidence: "Enterprise information-security policy, classification scheme; owner: Information Security function."
+metadata:
+  established_by: CR-IC-CAT-04

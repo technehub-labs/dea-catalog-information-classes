@@ -8,19 +8,30 @@
 
 ## Status
 
-**Planned.** Established by `CR-IC-CAT-01` (Information Class catalogue foundation) on 2026-02-11.
+**Populated.** Foundation `CR-IC-CAT-01` (2026-02-11); taxonomy `CR-IC-CAT-02`; record documentation standard `CR-IC-CAT-03`; initial population `CR-IC-CAT-04`.
 
-This repository currently contains the **catalogue method** and **no records**. Content population is gated on the taxonomy CR. Nothing in this repository asserts that a class exists; it establishes the criteria by which a class would be admitted, and the evidence a record must carry when it is.
+The catalogue carries its first six Information Class records under `entities/v1-alpha/`, each admitted against the ratified taxonomy and the record documentation standard. Further admissions require a CR; cross-catalogue crosswalk validation is `CR-IC-CAT-05`.
 
 | Item | State |
 |---|---|
-| Repository | planned, no records |
+| Repository | populated: six records (public, internal, confidential, PII, PHI, PCI) |
 | Metamodel pointer | pinned to OpenDEAM v0.2.1 |
 | Schema projection | landed (mirrors the metamodel entity schema) |
 | Taxonomy | landed (`CR-IC-CAT-02`): vocabulary files under `classifications/`, gate-enforced against the schema enums |
 | Record documentation standard | landed (`CR-IC-CAT-03`): `docs/RECORD-STANDARD.md`, enforced by Gate 7 |
-| Population | deferred to `CR-IC-CAT-04` (prerequisites complete) |
+| Population | landed (`CR-IC-CAT-04`): six records admitted under the standard |
 | Cross-catalogue integration | deferred to `CR-IC-CAT-05` |
+
+## Admitted records
+
+| Record | Sensitivity | Regulatory regime |
+|---|---|---|
+| [`dea:information-class-public`](./entities/v1-alpha/dea-information-class-public/) | public | none |
+| [`dea:information-class-internal`](./entities/v1-alpha/dea-information-class-internal/) | internal | none |
+| [`dea:information-class-confidential`](./entities/v1-alpha/dea-information-class-confidential/) | confidential | none |
+| [`dea:information-class-pii`](./entities/v1-alpha/dea-information-class-pii/) | restricted | PII |
+| [`dea:information-class-phi`](./entities/v1-alpha/dea-information-class-phi/) | restricted | PHI |
+| [`dea:information-class-pci`](./entities/v1-alpha/dea-information-class-pci/) | restricted | PCI |
 
 ## What this catalogue is
 
