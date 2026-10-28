@@ -93,5 +93,5 @@ References between catalogues are by canonical identifier, never by URL or repos
 | Foundation | `CR-IC-CAT-01` | Pointer gates, schema projection, FOUNDATIONS, five CI gates |
 | Taxonomy (landed) | `CR-IC-CAT-02` | Ratify per-sector class refinements, jurisdiction-specific regime values |
 | Record documentation standard (landed) | `CR-IC-CAT-03` | Define the evidence standard for admitted records |
-| Population | `CR-IC-CAT-04` | Admit the initial class records |
+| Population (landed) | `CR-IC-CAT-04` | Admit the initial class records |
 | Cross-catalogue integration | `CR-IC-CAT-05` | Wire `dea:maps-to` crosswalk validation into the gate suite |

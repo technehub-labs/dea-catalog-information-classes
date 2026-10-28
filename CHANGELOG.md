@@ -9,6 +9,10 @@ Allocation is recorded in the OpenDEAM root model; see `metamodel-pointer.yaml`.
 
 ### Added
 
+- `CR-IC-CAT-04`: initial population. Six Information Class records admitted under the record standard: public, internal, confidential, PII, PHI, PCI. Each carries a canonical id, schema-valid fields, R-1..R-5 conformance, and a per-record README.
+
+### Added
+
 - `CR-IC-CAT-03`: record documentation standard. `docs/RECORD-STANDARD.md` defines the canonical record shape, the semantic rules R-1..R-5 beyond the schema, the per-record README contract, and the admission posture. Gate 7 (`scripts/check_record_documentation.py`) enforces the standard on every record and asserts the standard's own presence on an empty tree. The record-posture gate's population-gates list is reconciled with the actual gates.
 
 ### Added

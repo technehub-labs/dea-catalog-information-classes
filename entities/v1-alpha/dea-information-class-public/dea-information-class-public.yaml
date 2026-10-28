@@ -1,0 +1,18 @@
+id: dea:information-class-public
+type: InformationClass
+name: Public
+description: Information approved for unrestricted public disclosure. Disclosure causes no harm to the enterprise, its customers, or its partners.
+version: 1.0.0
+lifecycle_status: active
+sensitivity: public
+regulatory_regime: [none]
+handling_requirements:
+  - Integrity of publication must be protected; no confidentiality controls beyond that.
+retention: Per the enterprise publication policy; superseded publications are archived, not destroyed.
+governance:
+  functional_owner: Emmanuel A. Otchere
+  steward: Emmanuel A. Otchere
+  approval_status: approved
+  source_and_evidence: "Enterprise information-security policy, public-disclosure chapter; owner: Information Security function."
+metadata:
+  established_by: CR-IC-CAT-04

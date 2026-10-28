@@ -1,0 +1,20 @@
+id: dea:information-class-confidential
+type: InformationClass
+name: Confidential
+description: Information whose disclosure causes material harm to the enterprise. Access is granted on a need-to-know basis and requires the information owner's approval.
+version: 1.0.0
+lifecycle_status: active
+sensitivity: confidential
+regulatory_regime: [none]
+handling_requirements:
+  - Access on need-to-know, approved by the information owner.
+  - Encryption in transit and at rest.
+  - Disclosure events are logged and reviewed.
+retention: Per the enterprise records-retention schedule; legal-hold overrides destruction.
+governance:
+  functional_owner: Emmanuel A. Otchere
+  steward: Emmanuel A. Otchere
+  approval_status: approved
+  source_and_evidence: "Enterprise information-security policy, classification scheme; owner: Information Security function."
+metadata:
+  established_by: CR-IC-CAT-04
