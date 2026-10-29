@@ -13,6 +13,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # The regenerator embeds remote.origin.url in CATALOG.yaml's
+      # repository field. Canonicalize to the .git form so the committed
+      # index matches regardless of how the checkout was cloned.
+      - name: Set canonical git origin URL (regenerator reads it)
+        run: |
+          git remote set-url origin "https://github.com/${GITHUB_REPOSITORY}.git"
+
       - name: "Step 1: YAML and JSON parsing"
         run: |
           set -euo pipefail
