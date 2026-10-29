@@ -1,5 +1,5 @@
 catalog:
-  abbreviation: GITH
+  abbreviation: IC
   counts:
     candidates: 0
     canonical: 8
@@ -107,7 +107,7 @@ catalog:
     version: 1.0.0
   id: dea:catalog-information-classes
   metamodel_version: unknown
-  name: github__technehub-labs__dea-catalog-information-classes
+  name: dea-catalog-information-classes
   owner: TechNeHub Labs
   repository: https://github.com/technehub-labs/dea-catalog-information-classes.git
   research_registers:
