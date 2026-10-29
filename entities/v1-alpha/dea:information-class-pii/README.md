@@ -5,6 +5,7 @@ Information that identifies a natural person, or is capable of doing so when com
 ## Classification
 - **Sensitivity:** restricted
 - **Regulatory regime:** PII
+- **Jurisdiction anchors:** eu-gdpr, uk-gdpr, us-ccpa-cpra
 
 ## Handling requirements
 - A lawful basis is required for every processing operation.

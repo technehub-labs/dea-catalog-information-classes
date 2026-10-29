@@ -9,6 +9,10 @@ Allocation is recorded in the OpenDEAM root model; see `metamodel-pointer.yaml`.
 
 ### Added
 
+- `CR-IC-CAT-08`: jurisdiction-regime axis. Eight-value closed vocabulary (`classifications/jurisdiction-regime-classifications.yaml`) refining regulatory regimes with anchoring statutes; each value declares which regimes it refines, and Gate 6 enforces per-record compatibility. Five records enriched; the regulatory-regime enum is untouched.
+
+### Added
+
 - `CR-IC-CAT-07`: sensitivity-lattice enrichment. Two restricted-but-unregulated classes admitted: Trade Secret and Material Non-Public Information (MNPI). The confidential/restricted boundary is now exercised by unregulated classes; every sensitivity band carries at least one unregulated member. Catalogue count: 8.
 
 ### Added

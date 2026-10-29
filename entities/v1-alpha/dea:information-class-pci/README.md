@@ -5,6 +5,7 @@ Cardholder account data and sensitive authentication data covered by the PCI DSS
 ## Classification
 - **Sensitivity:** restricted
 - **Regulatory regime:** PCI
+- **Jurisdiction anchors:** pci-dss
 
 ## Handling requirements
 - Storage of sensitive authentication data after authorization is prohibited.

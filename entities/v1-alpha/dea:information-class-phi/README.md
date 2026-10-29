@@ -5,6 +5,7 @@ Health information that identifies an individual, created or received in the pro
 ## Classification
 - **Sensitivity:** restricted
 - **Regulatory regime:** PHI
+- **Jurisdiction anchors:** us-hipaa
 
 ## Handling requirements
 - Access restricted to workforce members with treatment, payment, or operations roles.
