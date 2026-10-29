@@ -9,6 +9,10 @@ Allocation is recorded in the OpenDEAM root model; see `metamodel-pointer.yaml`.
 
 ### Added
 
+- `CR-IC-CAT-07`: sensitivity-lattice enrichment. Two restricted-but-unregulated classes admitted: Trade Secret and Material Non-Public Information (MNPI). The confidential/restricted boundary is now exercised by unregulated classes; every sensitivity band carries at least one unregulated member. Catalogue count: 8.
+
+### Added
+
 - `CR-IC-CAT-06`: generated `CATALOG.yaml` index per the catalog repository standard. Vendored regenerator + index gate from `dea-metaframework` v2.6.0; record subtrees renamed to the id-verbatim layout; pointer gained its additive `id` field; `contributions/` intake directory added; CI Step 9 enforces index freshness and strict validation.
 
 ### Added

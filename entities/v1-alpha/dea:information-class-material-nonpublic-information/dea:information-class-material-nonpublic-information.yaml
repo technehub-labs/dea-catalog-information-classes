@@ -1,0 +1,21 @@
+id: dea:information-class-material-nonpublic-information
+type: InformationClass
+name: Material Non-Public Information (MNPI)
+description: Information that a reasonable investor would consider important to an investment decision, and that is not publicly available. Securities law governs its possession, use, and dissemination; it is restricted without falling under the PII, PHI, or PCI regimes.
+version: 1.0.0
+lifecycle_status: active
+sensitivity: restricted
+regulatory_regime: [none]
+handling_requirements:
+  - Access restricted to persons whose duties require it, under a written insider-listing policy.
+  - Use for personal trading is prohibited; trading windows and restricted lists apply.
+  - Encryption in transit and at rest.
+  - Controlled and logged dissemination only; selective disclosure to outsiders requires Regulation-FD-compliant public disclosure.
+retention: Per the securities-compliance retention schedule; insider lists retained for the statutory period.
+governance:
+  functional_owner: Emmanuel A. Otchere
+  steward: Emmanuel A. Otchere
+  approval_status: approved
+  source_and_evidence: "Securities statutes applicable to the operating jurisdictions (e.g. insider-trading and Regulation FD rules); internal securities-compliance policy; owner: Compliance function."
+metadata:
+  established_by: CR-IC-CAT-07
