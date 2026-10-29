@@ -22,3 +22,11 @@ governance:
   source_and_evidence: "Enterprise information-security policy, classification scheme; owner: Information Security function."
 metadata:
   established_by: CR-IC-CAT-04
+relationships:
+  mapped_from:
+    - dea:information-asset-capability-discovery-views
+    - dea:information-asset-capability-release-readiness-record
+    - dea:information-asset-capability-submittal-review-a001
+    - dea:information-asset-capability-map-visuals
+    - dea:information-asset-metamodel-conformance-report
+    - dea:information-asset-metamodel-explorer-graph

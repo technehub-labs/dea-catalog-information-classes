@@ -1,10 +1,10 @@
 catalog:
-  abbreviation: GITH
+  abbreviation: DEA-
   counts:
     candidates: 0
     canonical: 8
     entities: 8
-    open_change_requests: 9
+    open_change_requests: 10
     research_files: 0
     retired: 0
   cross_cutting:
@@ -107,7 +107,7 @@ catalog:
     version: 1.0.0
   id: dea:catalog-information-classes
   metamodel_version: unknown
-  name: github__technehub-labs__dea-catalog-information-classes
+  name: dea-catalog-information-classes
   owner: TechNeHub Labs
   repository: https://github.com/technehub-labs/dea-catalog-information-classes.git
   research_registers:

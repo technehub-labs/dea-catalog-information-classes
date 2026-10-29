@@ -17,3 +17,13 @@ Per the enterprise records-retention schedule.
 - **Established by:** CR-IC-CAT-04
 - **Owner / steward:** Emmanuel A. Otchere / Emmanuel A. Otchere
 - **Evidence:** Enterprise information-security policy, classification scheme; owner: Information Security function.
+
+## Mapped-from
+Entities in other catalogues that map to this class via `dea:maps-to` (inverse references; promoted by `CR-IC-CAT-10`):
+- `dea:information-asset-capability-discovery-views` (technehub-labs/dea-catalog-information-assets, `CR-IA-CAT-04`)
+- `dea:information-asset-capability-release-readiness-record` (technehub-labs/dea-catalog-information-assets, `CR-IA-CAT-04`)
+- `dea:information-asset-capability-submittal-review-a001` (technehub-labs/dea-catalog-information-assets, `CR-IA-CAT-04`)
+- `dea:information-asset-capability-map-visuals` (technehub-labs/dea-catalog-information-assets, `CR-IA-CAT-04`)
+- `dea:information-asset-metamodel-conformance-report` (technehub-labs/dea-catalog-information-assets, `CR-IA-CAT-04`)
+- `dea:information-asset-metamodel-explorer-graph` (technehub-labs/dea-catalog-information-assets, `CR-IA-CAT-04`)
+
