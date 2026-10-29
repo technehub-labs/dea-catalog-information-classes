@@ -9,6 +9,11 @@ regulatory_regime: [none]
 handling_requirements:
   - Access limited to enterprise personnel and authorized third parties.
   - Disclosure outside the enterprise requires the owner's approval.
+mandated_controls:
+  - control: dea:control-workforce-access-management
+    requirement: "Limit access to enterprise personnel and authorized third parties via access management."
+  - control: dea:control-disclosure-approval
+    requirement: "Require information-owner approval for any disclosure outside the enterprise."
 retention: Per the enterprise records-retention schedule.
 governance:
   functional_owner: Emmanuel A. Otchere

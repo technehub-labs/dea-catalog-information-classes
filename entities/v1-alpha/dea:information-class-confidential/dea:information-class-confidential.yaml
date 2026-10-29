@@ -10,6 +10,13 @@ handling_requirements:
   - Access on need-to-know, approved by the information owner.
   - Encryption in transit and at rest.
   - Disclosure events are logged and reviewed.
+mandated_controls:
+  - control: dea:control-need-to-know-access
+    requirement: "Enforce need-to-know access with information-owner approval."
+  - control: dea:control-encryption-at-rest-and-transit
+    requirement: "Apply encryption in transit and at rest."
+  - control: dea:control-disclosure-logging
+    requirement: "Log and review disclosure events."
 retention: Per the enterprise records-retention schedule; legal-hold overrides destruction.
 governance:
   functional_owner: Emmanuel A. Otchere

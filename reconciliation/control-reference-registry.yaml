@@ -1,0 +1,9 @@
+# Control-reference registry (CR-IC-CAT-09).
+# Maps each control id referenced by this catalogue's records to the
+# CTL catalogue (technehub-labs/dea-catalog-controls). The controls
+# catalogue is an unpopulated scaffold (entity dea:entity-control,
+# status: proposed); Gate 10 validates id form only until
+# resolution_active is flipped to true, at which point every referenced
+# id must appear below with a resolvable CTL record.
+resolution_active: false
+entries: []

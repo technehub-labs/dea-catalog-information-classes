@@ -12,6 +12,17 @@ handling_requirements:
   - Data-subject rights (access, erasure, portability) must be supportable.
   - Encryption in transit and at rest.
   - Breach-notification readiness within statutory deadlines.
+mandated_controls:
+  - control: dea:control-lawful-basis-management
+    requirement: "Establish and record a lawful basis for every processing operation."
+  - control: dea:control-data-minimization
+    requirement: "Enforce data minimization and purpose limitation on all uses."
+  - control: dea:control-data-subject-rights-operations
+    requirement: "Support data-subject rights (access, erasure, portability) within statutory deadlines."
+  - control: dea:control-encryption-at-rest-and-transit
+    requirement: "Apply encryption in transit and at rest."
+  - control: dea:control-breach-notification-readiness
+    requirement: "Maintain breach-notification readiness within statutory deadlines."
 retention: Per the applicable privacy statute's limitation periods and the enterprise privacy-retention schedule.
 governance:
   functional_owner: Emmanuel A. Otchere

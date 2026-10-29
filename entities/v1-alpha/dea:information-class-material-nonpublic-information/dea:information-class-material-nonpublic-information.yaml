@@ -11,6 +11,15 @@ handling_requirements:
   - Use for personal trading is prohibited; trading windows and restricted lists apply.
   - Encryption in transit and at rest.
   - Controlled and logged dissemination only; selective disclosure to outsiders requires Regulation-FD-compliant public disclosure.
+mandated_controls:
+  - control: dea:control-insider-list-management
+    requirement: "Restrict access to duty-bound persons under a written insider-listing policy."
+  - control: dea:control-trading-restriction-enforcement
+    requirement: "Enforce trading windows and restricted lists; prohibit personal trading on MNPI."
+  - control: dea:control-encryption-at-rest-and-transit
+    requirement: "Apply encryption in transit and at rest."
+  - control: dea:control-controlled-dissemination
+    requirement: "Control and log dissemination; require Regulation-FD-compliant disclosure for selective disclosure."
 retention: Per the securities-compliance retention schedule; insider lists retained for the statutory period.
 governance:
   functional_owner: Emmanuel A. Otchere

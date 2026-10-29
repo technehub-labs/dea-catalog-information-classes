@@ -22,6 +22,7 @@ The catalogue carries its first six Information Class records under `entities/v1
 | Population | landed (`CR-IC-CAT-04`): six records admitted under the standard |
 | Cross-catalogue integration | landed (`CR-IC-CAT-05`): `relationships.mapped_from` + crosswalk inbox, enforced by Gate 8 |
 | Generated index | landed (`CR-IC-CAT-06`): `CATALOG.yaml`, regenerator + strict gate in CI |
+| Control references | landed (`CR-IC-CAT-09`): `mandated_controls[]` per record, id-form gate; CTL resolution deferred |
 
 ## Admitted records
 
@@ -89,7 +90,8 @@ dea-catalog-information-classes/
 │   ├── check_record_posture.py      ← Gate 5: records-directory posture
 │   ├── check_taxonomy.py            ← Gate 6: classification taxonomy
 │   ├── check_record_documentation.py ← Gate 7: record documentation standard
-│   └── check_crosswalk.py           ← Gate 8: cross-catalogue crosswalk
+│   ├── check_crosswalk.py           ← Gate 8: cross-catalogue crosswalk
+│   └── check_control_references.py  ← Gate 10: machine-readable control references
 ├── classifications/                 ← classification vocabularies (CR-IC-CAT-02)
 │   ├── sensitivity-classifications.yaml
 │   └── regulatory-regime-classifications.yaml
@@ -97,7 +99,7 @@ dea-catalog-information-classes/
 │   └── v1-alpha/                    ← records go here (population gated)
 └── .github/workflows/
     ├── validate-allocation.yml      ← OpenDEAM allocation validator (root model)
-    └── validate-catalogue.yml       ← the nine catalogue gates
+    └── validate-catalogue.yml       ← the ten catalogue gates
 ```
 
 ## Local validation

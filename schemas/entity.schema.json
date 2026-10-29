@@ -82,7 +82,28 @@
     "handling_requirements": {
       "type": "array",
       "items": { "type": "string" },
-      "description": "Catalogue-instance layer. Mandatory controls implied by the classification."
+      "description": "Catalogue-instance layer. Mandatory controls implied by the classification, phrased as obligations."
+    },
+    "mandated_controls": {
+      "type": "array",
+      "description": "Machine-readable control references (CR-IC-CAT-09): each entry pairs the class-side obligation with the canonical Control id it references in dea-catalog-controls. Id-form validated at gate time; cross-catalogue resolution activates when CTL records land.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["control", "requirement"],
+        "properties": {
+          "control": {
+            "type": "string",
+            "pattern": "^dea:control-[a-z0-9-]+$",
+            "description": "Canonical Control id (dea-catalog-controls; entity dea:entity-control, alias CTL)."
+          },
+          "requirement": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The obligation the class places on the referenced control, phrased as a mandate."
+          }
+        }
+      }
     },
     "retention": {
       "type": "string",
