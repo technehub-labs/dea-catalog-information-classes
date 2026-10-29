@@ -20,18 +20,19 @@ The catalogue carries its first six Information Class records under `entities/v1
 | Taxonomy | landed (`CR-IC-CAT-02`): vocabulary files under `classifications/`, gate-enforced against the schema enums |
 | Record documentation standard | landed (`CR-IC-CAT-03`): `docs/RECORD-STANDARD.md`, enforced by Gate 7 |
 | Population | landed (`CR-IC-CAT-04`): six records admitted under the standard |
-| Cross-catalogue integration | deferred to `CR-IC-CAT-05` |
+| Cross-catalogue integration | landed (`CR-IC-CAT-05`): `relationships.mapped_from` + crosswalk inbox, enforced by Gate 8 |
+| Generated index | landed (`CR-IC-CAT-06`): `CATALOG.yaml`, regenerator + strict gate in CI |
 
 ## Admitted records
 
 | Record | Sensitivity | Regulatory regime |
 |---|---|---|
-| [`dea:information-class-public`](./entities/v1-alpha/dea-information-class-public/) | public | none |
-| [`dea:information-class-internal`](./entities/v1-alpha/dea-information-class-internal/) | internal | none |
-| [`dea:information-class-confidential`](./entities/v1-alpha/dea-information-class-confidential/) | confidential | none |
-| [`dea:information-class-pii`](./entities/v1-alpha/dea-information-class-pii/) | restricted | PII |
-| [`dea:information-class-phi`](./entities/v1-alpha/dea-information-class-phi/) | restricted | PHI |
-| [`dea:information-class-pci`](./entities/v1-alpha/dea-information-class-pci/) | restricted | PCI |
+| [`dea:information-class-public`](./entities/v1-alpha/dea:information-class-public/) | public | none |
+| [`dea:information-class-internal`](./entities/v1-alpha/dea:information-class-internal/) | internal | none |
+| [`dea:information-class-confidential`](./entities/v1-alpha/dea:information-class-confidential/) | confidential | none |
+| [`dea:information-class-pii`](./entities/v1-alpha/dea:information-class-pii/) | restricted | PII |
+| [`dea:information-class-phi`](./entities/v1-alpha/dea:information-class-phi/) | restricted | PHI |
+| [`dea:information-class-pci`](./entities/v1-alpha/dea:information-class-pci/) | restricted | PCI |
 
 ## What this catalogue is
 
@@ -72,6 +73,7 @@ The catalogue of **classes**, not of data. An Information Class record names a b
 ```
 dea-catalog-information-classes/
 ├── metamodel-pointer.yaml           ← entity allocation (do not edit manually)
+├── CATALOG.yaml                     ← machine-generated index (CR-IC-CAT-06; do not hand-edit)
 ├── docs/
 │   ├── FOUNDATIONS.md               ← catalogue method
 │   └── RECORD-STANDARD.md           ← record documentation standard (CR-IC-CAT-03)
@@ -93,7 +95,7 @@ dea-catalog-information-classes/
 │   └── v1-alpha/                    ← records go here (population gated)
 └── .github/workflows/
     ├── validate-allocation.yml      ← OpenDEAM allocation validator (root model)
-    └── validate-catalogue.yml       ← the eight catalogue gates
+    └── validate-catalogue.yml       ← the nine catalogue gates
 ```
 
 ## Local validation

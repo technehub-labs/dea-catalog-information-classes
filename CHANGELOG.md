@@ -9,6 +9,10 @@ Allocation is recorded in the OpenDEAM root model; see `metamodel-pointer.yaml`.
 
 ### Added
 
+- `CR-IC-CAT-06`: generated `CATALOG.yaml` index per the catalog repository standard. Vendored regenerator + index gate from `dea-metaframework` v2.6.0; record subtrees renamed to the id-verbatim layout; pointer gained its additive `id` field; `contributions/` intake directory added; CI Step 9 enforces index freshness and strict validation.
+
+### Added
+
 - `CR-IC-CAT-05`: cross-catalogue crosswalk validation. Optional `relationships.mapped_from[]` added to the schema (inverse of `dea:maps-to`), `reconciliation/crosswalk-inbox.yaml` intake queue for crosswalks proposed by other catalogues, and Gate 8 (`scripts/check_crosswalk.py`) validating id form, external-only resolution, and inbox entries.
 
 ### Added
