@@ -70,6 +70,15 @@
       },
       "description": "Regulatory-regime axis. A record may be governed by more than one regime."
     },
+    "jurisdiction_regime": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": ["eu-gdpr", "uk-gdpr", "us-ccpa-cpra", "us-hipaa", "pci-dss", "us-dtsa", "eu-trade-secrets-directive", "us-securities-insider-trading"]
+      },
+      "description": "Jurisdiction-regime axis (CR-IC-CAT-08): optional per record. Each value refines a named regime (PII, PHI, PCI) or anchors statutory authority for unregulated-but-protected classes (`none`). Gate 6 checks a record's values are compatible with its regulatory_regime."
+    },
     "handling_requirements": {
       "type": "array",
       "items": { "type": "string" },

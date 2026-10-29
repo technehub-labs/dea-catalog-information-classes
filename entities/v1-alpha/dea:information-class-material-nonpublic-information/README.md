@@ -5,6 +5,7 @@ Information that a reasonable investor would consider important to an investment
 ## Classification
 - **Sensitivity:** restricted
 - **Regulatory regime:** none
+- **Jurisdiction anchors:** us-securities-insider-trading
 
 ## Handling requirements
 - Access restricted to persons whose duties require it, under a written insider-listing policy.

@@ -5,6 +5,7 @@ Information deriving economic value from not being generally known and subject t
 ## Classification
 - **Sensitivity:** restricted
 - **Regulatory regime:** none
+- **Jurisdiction anchors:** us-dtsa, eu-trade-secrets-directive
 
 ## Handling requirements
 - Documented reasonable secrecy efforts (access controls, NDAs, marking) must be maintained; their absence forfeits protection.

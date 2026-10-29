@@ -1,0 +1,33 @@
+# Jurisdiction-regime classifications (CR-IC-CAT-08 binding axis 3)
+# Optional per record: refines a regulatory-regime value with the
+# jurisdiction-specific statute or rule that anchors it. Each value
+# declares which regime(s) it can refine: a value refining PII may appear
+# only on a record carrying PII in regulatory_regime; a value refining
+# `none` anchors statutory authority for unregulated-but-protected
+# classes (e.g. trade secrets) and may appear only on [none] records.
+version: 1.0.0
+values:
+- id: eu-gdpr
+  refines: [PII]
+  definition: EU General Data Protection Regulation; anchors the PII regime in EU jurisdictions.
+- id: uk-gdpr
+  refines: [PII]
+  definition: United Kingdom GDPR; anchors the PII regime in UK jurisdictions.
+- id: us-ccpa-cpra
+  refines: [PII]
+  definition: California Consumer Privacy Act as amended by the CPRA; anchors the PII regime for California consumers.
+- id: us-hipaa
+  refines: [PHI]
+  definition: US Health Insurance Portability and Accountability Act; anchors the PHI regime for covered entities.
+- id: pci-dss
+  refines: [PCI]
+  definition: PCI Data Security Standard (current version); the global contractual regime anchoring the PCI axis, not jurisdiction-bound.
+- id: us-dtsa
+  refines: [none]
+  definition: US Defend Trade Secrets Act; anchors trade-secret protection in US jurisdictions.
+- id: eu-trade-secrets-directive
+  refines: [none]
+  definition: EU Trade Secrets Directive (2016/943); anchors trade-secret protection in EU jurisdictions.
+- id: us-securities-insider-trading
+  refines: [none]
+  definition: US insider-trading prohibitions and Regulation FD; anchors MNPI handling for US-listed issuers.
