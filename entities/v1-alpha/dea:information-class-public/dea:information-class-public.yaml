@@ -8,6 +8,9 @@ sensitivity: public
 regulatory_regime: [none]
 handling_requirements:
   - Integrity of publication must be protected; no confidentiality controls beyond that.
+mandated_controls:
+  - control: dea:control-publication-integrity
+    requirement: "Preserve the integrity of published information through the publication pipeline's integrity controls."
 retention: Per the enterprise publication policy; superseded publications are archived, not destroyed.
 governance:
   functional_owner: Emmanuel A. Otchere

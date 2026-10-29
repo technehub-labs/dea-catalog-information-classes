@@ -11,6 +11,15 @@ handling_requirements:
   - Access restricted to roles with documented business justification; each user carries a unique id.
   - Encryption in transit and at rest over public networks.
   - Quarterly vulnerability scans on in-scope systems.
+mandated_controls:
+  - control: dea:control-sensitive-authentication-data-prohibition
+    requirement: "Prohibit storage of sensitive authentication data after authorization."
+  - control: dea:control-role-based-access-with-unique-ids
+    requirement: "Restrict access to justified roles and assign unique ids per user."
+  - control: dea:control-encryption-at-rest-and-transit
+    requirement: "Apply encryption in transit and at rest over public networks."
+  - control: dea:control-quarterly-vulnerability-scanning
+    requirement: "Run quarterly vulnerability scans on in-scope systems."
 retention: Per PCI DSS and card-brand retention limits; sensitive authentication data is never retained.
 governance:
   functional_owner: Emmanuel A. Otchere

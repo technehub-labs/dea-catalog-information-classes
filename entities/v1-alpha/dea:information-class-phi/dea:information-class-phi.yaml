@@ -11,6 +11,15 @@ handling_requirements:
   - The minimum-necessary standard applies to all uses and disclosures.
   - Encryption in transit and at rest.
   - Disclosure logging and breach-notification readiness within statutory deadlines.
+mandated_controls:
+  - control: dea:control-treatment-role-access
+    requirement: "Restrict access to workforce members with treatment, payment, or operations roles."
+  - control: dea:control-minimum-necessary-enforcement
+    requirement: "Enforce the minimum-necessary standard on all uses and disclosures."
+  - control: dea:control-encryption-at-rest-and-transit
+    requirement: "Apply encryption in transit and at rest."
+  - control: dea:control-disclosure-logging
+    requirement: "Log disclosures and maintain breach-notification readiness."
 retention: Per health-records retention statutes in the operating jurisdictions.
 governance:
   functional_owner: Emmanuel A. Otchere
