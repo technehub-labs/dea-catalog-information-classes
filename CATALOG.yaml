@@ -1,0 +1,111 @@
+catalog:
+  abbreviation: GITH
+  counts:
+    candidates: 0
+    canonical: 6
+    entities: 6
+    open_change_requests: 6
+    research_files: 0
+    retired: 0
+  cross_cutting:
+    change_requests: change-requests/
+    classifications: classifications/
+    contributions_queue: contributions/
+    schemas: schemas/
+    validators: scripts/
+  description: 'A classification of information by sensitivity and regulatory regime (PII, PHI, PCI).
+
+    '
+  entities:
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:information-class-confidential
+    last_modified: '2026-10-29'
+    lifecycle_status: active
+    path: entities/v1-alpha/dea:information-class-confidential/dea:information-class-confidential.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: InformationClass
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:information-class-internal
+    last_modified: '2026-10-29'
+    lifecycle_status: active
+    path: entities/v1-alpha/dea:information-class-internal/dea:information-class-internal.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: InformationClass
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:information-class-pci
+    last_modified: '2026-10-29'
+    lifecycle_status: active
+    path: entities/v1-alpha/dea:information-class-pci/dea:information-class-pci.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: InformationClass
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:information-class-phi
+    last_modified: '2026-10-29'
+    lifecycle_status: active
+    path: entities/v1-alpha/dea:information-class-phi/dea:information-class-phi.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: InformationClass
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:information-class-pii
+    last_modified: '2026-10-29'
+    lifecycle_status: active
+    path: entities/v1-alpha/dea:information-class-pii/dea:information-class-pii.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: InformationClass
+    version: 1.0.0
+  - candidate_count: 0
+    canonical_count: 1
+    id: dea:information-class-public
+    last_modified: '2026-10-29'
+    lifecycle_status: active
+    path: entities/v1-alpha/dea:information-class-public/dea:information-class-public.yaml
+    research_count: 0
+    retired_count: 0
+    state: canonical
+    type: InformationClass
+    version: 1.0.0
+  id: dea:catalog-information-classes
+  metamodel_version: unknown
+  name: github__technehub-labs__dea-catalog-information-classes
+  owner: TechNeHub Labs
+  repository: https://github.com/technehub-labs/dea-catalog-information-classes
+  research_registers:
+  - entity_id: dea:information-class-confidential
+    files: []
+    path: entities/v1-alpha/dea:information-class-confidential/research/
+  - entity_id: dea:information-class-internal
+    files: []
+    path: entities/v1-alpha/dea:information-class-internal/research/
+  - entity_id: dea:information-class-pci
+    files: []
+    path: entities/v1-alpha/dea:information-class-pci/research/
+  - entity_id: dea:information-class-phi
+    files: []
+    path: entities/v1-alpha/dea:information-class-phi/research/
+  - entity_id: dea:information-class-pii
+    files: []
+    path: entities/v1-alpha/dea:information-class-pii/research/
+  - entity_id: dea:information-class-public
+    files: []
+    path: entities/v1-alpha/dea:information-class-public/research/
+  status: active
+  version: 0.0.0
