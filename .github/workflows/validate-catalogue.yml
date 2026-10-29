@@ -58,3 +58,8 @@ jobs:
           set -euo pipefail
           python3 scripts/regenerate_catalog.py --check --schema catalog-index-schema/catalog-index-schema.json
           python3 scripts/check_catalog_index.py --strict --schema catalog-index-schema/catalog-index-schema.json
+
+      - name: "Step 10: Control references"
+        run: |
+          set -euo pipefail
+          python3 scripts/check_control_references.py

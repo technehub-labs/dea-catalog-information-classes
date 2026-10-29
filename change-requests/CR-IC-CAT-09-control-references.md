@@ -30,7 +30,7 @@ The two-stage gate (`scripts/check_control_references.py`, Gate 10):
 
 ## 3. Records enriched
 
-All eight records. 20 unique control ids referenced across the catalogue, including shared controls (`dea:control-encryption-at-rest-and-transit` referenced by six classes, `dea:control-need-to-know-access` by two, `dea:control-disclosure-logging` by two) — the sharing is intentional and is the join surface downstream consumers query.
+All eight records. 20 unique control ids referenced across the catalogue, including shared controls (`dea:control-encryption-at-rest-and-transit` referenced by six classes, `dea:control-need-to-know-access` by two, `dea:control-disclosure-logging` by two); the sharing is intentional and is the join surface downstream consumers query.
 
 ## 4. Out of scope
 

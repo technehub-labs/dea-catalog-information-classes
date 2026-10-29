@@ -9,6 +9,10 @@ Allocation is recorded in the OpenDEAM root model; see `metamodel-pointer.yaml`.
 
 ### Added
 
+- `CR-IC-CAT-09`: machine-readable control references. `mandated_controls[]` on every record pairs the class-side obligation with the canonical Control id (`dea:control-<slug>`) it references in `dea-catalog-controls`. Gate 10 validates id form (stage 1) with cross-catalogue resolution deferred via `reconciliation/control-reference-registry.yaml` until the CTL catalogue populates (stage 2). All eight records enriched; 20 unique control references.
+
+### Added
+
 - `CR-IC-CAT-08`: jurisdiction-regime axis. Eight-value closed vocabulary (`classifications/jurisdiction-regime-classifications.yaml`) refining regulatory regimes with anchoring statutes; each value declares which regimes it refines, and Gate 6 enforces per-record compatibility. Five records enriched; the regulatory-regime enum is untouched.
 
 ### Added
