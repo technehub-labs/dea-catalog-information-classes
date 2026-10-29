@@ -11,7 +11,15 @@ jobs:
     name: catalogue
     runs-on: ubuntu-latest
     steps:
+      # Full history: the regenerator's last_modified field resolves
+      # from git last-commit dates per record path. A shallow checkout
+      # (actions/checkout default, fetch-depth: 1) collapses every path
+      # to the merge commit's date, so the regenerated index drifts from
+      # the committed one and the freshness gate fails. The OU catalogue's
+      # conformance workflow uses fetch-depth: 0 for the same reason.
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       # The regenerator embeds remote.origin.url in CATALOG.yaml's
       # repository field. Canonicalize to the .git form so the committed
