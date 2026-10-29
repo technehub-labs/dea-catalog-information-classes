@@ -41,4 +41,6 @@ python3 scripts/check_record_posture.py
 python3 scripts/check_taxonomy.py
 python3 scripts/check_record_documentation.py
 python3 scripts/check_crosswalk.py
+python3 scripts/regenerate_catalog.py --check --schema catalog-index-schema/catalog-index-schema.json
+python3 scripts/check_catalog_index.py --strict --schema catalog-index-schema/catalog-index-schema.json
 ```
