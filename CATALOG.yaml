@@ -109,7 +109,7 @@ catalog:
   metamodel_version: unknown
   name: github__technehub-labs__dea-catalog-information-classes
   owner: TechNeHub Labs
-  repository: https://github.com/technehub-labs/dea-catalog-information-classes
+  repository: https://github.com/technehub-labs/dea-catalog-information-classes.git
   research_registers:
   - entity_id: dea:information-class-confidential
     files: []
