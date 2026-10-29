@@ -17,7 +17,7 @@ The catalogue carries its first six Information Class records under `entities/v1
 | Repository | populated: eight records; the sensitivity lattice is complete (all bands carry unregulated classes; restricted carries regulated and unregulated members) |
 | Metamodel pointer | pinned to OpenDEAM v0.2.1 |
 | Schema projection | landed (mirrors the metamodel entity schema) |
-| Taxonomy | landed (`CR-IC-CAT-02`): vocabulary files under `classifications/`, gate-enforced against the schema enums |
+| Taxonomy | three axes (`CR-IC-CAT-02` + `CR-IC-CAT-08`): sensitivity, regulatory regime, jurisdiction regime; vocabulary files under `classifications/`, gate-enforced against the schema enums |
 | Record documentation standard | landed (`CR-IC-CAT-03`): `docs/RECORD-STANDARD.md`, enforced by Gate 7 |
 | Population | landed (`CR-IC-CAT-04`): six records admitted under the standard |
 | Cross-catalogue integration | landed (`CR-IC-CAT-05`): `relationships.mapped_from` + crosswalk inbox, enforced by Gate 8 |
@@ -25,16 +25,16 @@ The catalogue carries its first six Information Class records under `entities/v1
 
 ## Admitted records
 
-| Record | Sensitivity | Regulatory regime |
-|---|---|---|
-| [`dea:information-class-public`](./entities/v1-alpha/dea:information-class-public/) | public | none |
-| [`dea:information-class-internal`](./entities/v1-alpha/dea:information-class-internal/) | internal | none |
-| [`dea:information-class-confidential`](./entities/v1-alpha/dea:information-class-confidential/) | confidential | none |
-| [`dea:information-class-pii`](./entities/v1-alpha/dea:information-class-pii/) | restricted | PII |
-| [`dea:information-class-phi`](./entities/v1-alpha/dea:information-class-phi/) | restricted | PHI |
-| [`dea:information-class-pci`](./entities/v1-alpha/dea:information-class-pci/) | restricted | PCI |
-| [`dea:information-class-trade-secret`](./entities/v1-alpha/dea:information-class-trade-secret/) | restricted | none |
-| [`dea:information-class-material-nonpublic-information`](./entities/v1-alpha/dea:information-class-material-nonpublic-information/) | restricted | none |
+| Record | Sensitivity | Regulatory regime | Jurisdiction anchors |
+|---|---|---|---|
+| [`dea:information-class-public`](./entities/v1-alpha/dea:information-class-public/) | public | none | (none) |
+| [`dea:information-class-internal`](./entities/v1-alpha/dea:information-class-internal/) | internal | none | (none) |
+| [`dea:information-class-confidential`](./entities/v1-alpha/dea:information-class-confidential/) | confidential | none | (none) |
+| [`dea:information-class-pii`](./entities/v1-alpha/dea:information-class-pii/) | restricted | PII | eu-gdpr, uk-gdpr, us-ccpa-cpra |
+| [`dea:information-class-phi`](./entities/v1-alpha/dea:information-class-phi/) | restricted | PHI | us-hipaa |
+| [`dea:information-class-pci`](./entities/v1-alpha/dea:information-class-pci/) | restricted | PCI | pci-dss |
+| [`dea:information-class-trade-secret`](./entities/v1-alpha/dea:information-class-trade-secret/) | restricted | none | us-dtsa, eu-trade-secrets-directive |
+| [`dea:information-class-material-nonpublic-information`](./entities/v1-alpha/dea:information-class-material-nonpublic-information/) | restricted | none | us-securities-insider-trading |
 
 ## What this catalogue is
 
