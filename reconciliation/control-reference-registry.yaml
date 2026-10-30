@@ -1,9 +1,69 @@
-# Control-reference registry (CR-IC-CAT-09).
+# Control-reference registry (CR-IC-CAT-09; resolution activated by CR-IC-CAT-11).
+#
 # Maps each control id referenced by this catalogue's records to the
-# CTL catalogue (technehub-labs/dea-catalog-controls). The controls
-# catalogue is an unpopulated scaffold (entity dea:entity-control,
-# status: proposed); Gate 10 validates id form only until
-# resolution_active is flipped to true, at which point every referenced
-# id must appear below with a resolvable CTL record.
-resolution_active: false
-entries: []
+# controls catalogue's canonical records (dea-catalog-controls, entity
+# dea:entity-control). Gate 10 validates: every referenced id resolves
+# here when resolution_active is true; the ids and their records landed
+# as CR-CTL-CAT-02 (20 canonical records, one per referenced id).
+entries:
+- cr: 'CR-CTL-CAT-02 (technehub-labs/dea-catalog-controls, PR #2)'
+  id: dea:control-breach-notification-readiness
+  record: dea:control-breach-notification-readiness
+- cr: 'CR-CTL-CAT-02 (technehub-labs/dea-catalog-controls, PR #2)'
+  id: dea:control-confidentiality-agreement-disclosure
+  record: dea:control-confidentiality-agreement-disclosure
+- cr: 'CR-CTL-CAT-02 (technehub-labs/dea-catalog-controls, PR #2)'
+  id: dea:control-controlled-dissemination
+  record: dea:control-controlled-dissemination
+- cr: 'CR-CTL-CAT-02 (technehub-labs/dea-catalog-controls, PR #2)'
+  id: dea:control-data-minimization
+  record: dea:control-data-minimization
+- cr: 'CR-CTL-CAT-02 (technehub-labs/dea-catalog-controls, PR #2)'
+  id: dea:control-data-subject-rights-operations
+  record: dea:control-data-subject-rights-operations
+- cr: 'CR-CTL-CAT-02 (technehub-labs/dea-catalog-controls, PR #2)'
+  id: dea:control-disclosure-approval
+  record: dea:control-disclosure-approval
+- cr: 'CR-CTL-CAT-02 (technehub-labs/dea-catalog-controls, PR #2)'
+  id: dea:control-disclosure-logging
+  record: dea:control-disclosure-logging
+- cr: 'CR-CTL-CAT-02 (technehub-labs/dea-catalog-controls, PR #2)'
+  id: dea:control-encryption-at-rest-and-transit
+  record: dea:control-encryption-at-rest-and-transit
+- cr: 'CR-CTL-CAT-02 (technehub-labs/dea-catalog-controls, PR #2)'
+  id: dea:control-insider-list-management
+  record: dea:control-insider-list-management
+- cr: 'CR-CTL-CAT-02 (technehub-labs/dea-catalog-controls, PR #2)'
+  id: dea:control-lawful-basis-management
+  record: dea:control-lawful-basis-management
+- cr: 'CR-CTL-CAT-02 (technehub-labs/dea-catalog-controls, PR #2)'
+  id: dea:control-minimum-necessary-enforcement
+  record: dea:control-minimum-necessary-enforcement
+- cr: 'CR-CTL-CAT-02 (technehub-labs/dea-catalog-controls, PR #2)'
+  id: dea:control-need-to-know-access
+  record: dea:control-need-to-know-access
+- cr: 'CR-CTL-CAT-02 (technehub-labs/dea-catalog-controls, PR #2)'
+  id: dea:control-publication-integrity
+  record: dea:control-publication-integrity
+- cr: 'CR-CTL-CAT-02 (technehub-labs/dea-catalog-controls, PR #2)'
+  id: dea:control-quarterly-vulnerability-scanning
+  record: dea:control-quarterly-vulnerability-scanning
+- cr: 'CR-CTL-CAT-02 (technehub-labs/dea-catalog-controls, PR #2)'
+  id: dea:control-role-based-access-with-unique-ids
+  record: dea:control-role-based-access-with-unique-ids
+- cr: 'CR-CTL-CAT-02 (technehub-labs/dea-catalog-controls, PR #2)'
+  id: dea:control-secrecy-efforts-maintenance
+  record: dea:control-secrecy-efforts-maintenance
+- cr: 'CR-CTL-CAT-02 (technehub-labs/dea-catalog-controls, PR #2)'
+  id: dea:control-sensitive-authentication-data-prohibition
+  record: dea:control-sensitive-authentication-data-prohibition
+- cr: 'CR-CTL-CAT-02 (technehub-labs/dea-catalog-controls, PR #2)'
+  id: dea:control-trading-restriction-enforcement
+  record: dea:control-trading-restriction-enforcement
+- cr: 'CR-CTL-CAT-02 (technehub-labs/dea-catalog-controls, PR #2)'
+  id: dea:control-treatment-role-access
+  record: dea:control-treatment-role-access
+- cr: 'CR-CTL-CAT-02 (technehub-labs/dea-catalog-controls, PR #2)'
+  id: dea:control-workforce-access-management
+  record: dea:control-workforce-access-management
+resolution_active: true
