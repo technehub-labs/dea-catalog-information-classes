@@ -18,3 +18,8 @@ Per the enterprise records-retention schedule; legal-hold overrides destruction.
 - **Established by:** CR-IC-CAT-04
 - **Owner / steward:** Emmanuel A. Otchere / Emmanuel A. Otchere
 - **Evidence:** Enterprise information-security policy, classification scheme; owner: Information Security function.
+
+## Mapped-from
+Entities in other catalogues that map to this class via `dea:maps-to` (inverse references; promoted by `CR-IC-CAT-10`):
+- `dea:information-asset-capability-catalog-integrity-report` (technehub-labs/dea-catalog-information-assets, `CR-IA-CAT-04`)
+

@@ -9,6 +9,8 @@ Allocation is recorded in the OpenDEAM root model; see `metamodel-pointer.yaml`.
 
 ### Added
 
+- `CR-IC-CAT-10`: first mapped-from crosswalks promoted. The information-assets catalogue (`CR-IA-CAT-04`) admitted seven canonical Information Asset records, each asserting a `dea:maps-to` crosswalk into a canonical class here; `dea:information-class-confidential` (1 entry) and `dea:information-class-internal` (6 entries) gain `relationships.mapped_from` inverse references and README Mapped-from sections. These are the first bound objects for this catalogue's classes. Section 5 of the CR names the vendored regenerator's open-CR counting defect (pre-CR-ECF-011 heuristic) that moves the committed counter from 9 to 10; the modernization is a separate CR.
+
 - `CR-IC-CAT-09`: machine-readable control references. `mandated_controls[]` on every record pairs the class-side obligation with the canonical Control id (`dea:control-<slug>`) it references in `dea-catalog-controls`. Gate 10 validates id form (stage 1) with cross-catalogue resolution deferred via `reconciliation/control-reference-registry.yaml` until the CTL catalogue populates (stage 2). All eight records enriched; 20 unique control references.
 
 ### Added
