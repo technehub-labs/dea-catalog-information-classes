@@ -71,6 +71,16 @@ jobs:
       - name: "Step 9: CATALOG.yaml freshness and validation"
         run: |
           set -euo pipefail
+          echo "=== DIAGNOSTIC: CI-side regenerated index vs committed ==="
+          python3 scripts/regenerate_catalog.py --dry-run --schema catalog-index-schema/catalog-index-schema.json | diff -z <(echo) /dev/null 2>/dev/null || true
+          python3 scripts/regenerate_catalog.py --dry-run --schema catalog-index-schema/catalog-index-schema.json > /tmp/regen-ci.yaml || true
+          diff /tmp/regen-ci.yaml CATALOG.yaml || true
+          echo "=== HEAD info ==="
+          git log -1 --format="%H %ct" || true
+          git remote -v || true
+          echo "=== record path dates ==="
+          for d in entities/v1-alpha/*/; do echo "$d -> $(git log -1 --format=%ct -- "$d" 2>/dev/null)"; done || true
+          echo "=== END DIAGNOSTIC ==="
           python3 scripts/regenerate_catalog.py --check --schema catalog-index-schema/catalog-index-schema.json
           python3 scripts/check_catalog_index.py --strict --schema catalog-index-schema/catalog-index-schema.json
 
