@@ -163,6 +163,25 @@ def catalog_name_from_dir(catalog_root: Path) -> str:
     return catalog_root.resolve().name
 
 
+def resolve_repository_url(catalog_root: Path, pointer: dict[str, Any]) -> str:
+    """Resolve the catalog's canonical repository URL (CR-IC-CAT-13).
+
+    Precedence: the pointer's top-level `repository` key first (a
+    checked-in, environment-independent canonical URL), then
+    remote.origin.url (legacy behavior, credential-stripped). The pointer
+    form is the recommended one: remote.origin.url varies across
+    checkouts (with/without the .git suffix, PAT-bearing authenticated
+    forms, non-canonical mirrors), and the index freshness gate compares
+    the regenerated index byte-for-byte against the committed one, so any
+    remote-derived variance between the generating checkout and the
+    validating checkout fails CI spuriously.
+    """
+    pointer_url = str(pointer.get("repository") or "").strip()
+    if pointer_url:
+        return _strip_url_credentials(pointer_url)
+    return detect_repository_url(catalog_root)
+
+
 def build_catalog_metadata(
     catalog_root: Path, pointer: dict[str, Any], verbose: bool
 ) -> tuple[dict[str, Any], list[str]]:
@@ -182,7 +201,7 @@ def build_catalog_metadata(
         "status": pointer.get("status", "active"),
         "metamodel_version": str(pointer.get("metamodel_version", "unknown")),
         "description": str(pointer.get("description", "")),
-        "repository": detect_repository_url(catalog_root),
+        "repository": resolve_repository_url(catalog_root, pointer),
         "owner": pointer.get("owner", DEFAULT_OWNER),
     }
     return metadata, warnings
