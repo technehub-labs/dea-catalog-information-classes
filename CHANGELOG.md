@@ -9,6 +9,10 @@ Allocation is recorded in the OpenDEAM root model; see `metamodel-pointer.yaml`.
 
 ### Changed
 
+- `CR-IC-CAT-13`: the index's `repository` field now resolves from the pointer's top-level `repository` key (with the live remote as fallback) instead of from `remote.origin.url` alone, making the generated index environment-independent. The CI remote-canonicalization workaround is removed as redundant. Same-change upstreaming to `dea-metaframework` recommended.
+
+### Changed
+
 - `CR-IC-CAT-12`: structured crosswalk instances. `relationships.mapped_from` entries upgraded from bare ids to structured instances (`id`, `relationship`, `rationale`, `provenance`), mirroring verbatim the `dea:maps-to` assertions in `dea-catalog-information-assets`. Gate 8 validates the full structure; record READMEs now carry per-asset classification rationale. Cross-org sweep confirmed information-assets is the sole asserting catalogue.
 
 ### Added

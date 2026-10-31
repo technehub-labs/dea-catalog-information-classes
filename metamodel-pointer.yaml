@@ -5,6 +5,7 @@
 id: dea:catalog-information-classes
 name: dea-catalog-information-classes
 abbreviation: IC
+repository: https://github.com/technehub-labs/dea-catalog-information-classes.git
 
 metamodel:
   version: v0.2.1
