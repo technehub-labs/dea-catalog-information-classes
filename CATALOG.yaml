@@ -20,7 +20,7 @@ catalog:
   - candidate_count: 0
     canonical_count: 1
     id: dea:information-class-confidential
-    last_modified: '2026-10-29'
+    last_modified: '2026-10-31'
     lifecycle_status: active
     path: entities/v1-alpha/dea:information-class-confidential/dea:information-class-confidential.yaml
     research_count: 0
@@ -31,7 +31,7 @@ catalog:
   - candidate_count: 0
     canonical_count: 1
     id: dea:information-class-internal
-    last_modified: '2026-10-29'
+    last_modified: '2026-10-31'
     lifecycle_status: active
     path: entities/v1-alpha/dea:information-class-internal/dea:information-class-internal.yaml
     research_count: 0
@@ -109,7 +109,7 @@ catalog:
   metamodel_version: unknown
   name: dea-catalog-information-classes
   owner: TechNeHub Labs
-  repository: https://github.com/technehub-labs/dea-catalog-information-classes
+  repository: https://github.com/technehub-labs/dea-catalog-information-classes.git
   research_registers:
   - entity_id: dea:information-class-confidential
     files: []
