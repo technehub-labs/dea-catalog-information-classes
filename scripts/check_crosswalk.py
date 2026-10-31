@@ -55,11 +55,34 @@ def main() -> int:
         if not isinstance(maps_to, list):
             findings.append(f"{rid}: relationships.mapped_from must be a list")
             continue
-        for ref in maps_to:
-            if not isinstance(ref, str) or not ref.startswith(ID_PREFIX):
-                findings.append(f"{rid}: mapped_from entry {ref!r} is not a canonical entity id (must start 'dea:')")
-            elif ref in canonical_ids:
-                findings.append(f"{rid}: mapped_from entry {ref!r} resolves to this catalogue's own record; mapped_from catalogues external entities")
+        for i, entry in enumerate(maps_to):
+            if isinstance(entry, str):
+                # Legacy bare-id form (pre CR-IC-CAT-12); accepted but flagged for upgrade.
+                if not entry.startswith(ID_PREFIX):
+                    findings.append(f"{rid}: mapped_from[{i}] {entry!r} is not a canonical entity id (must start 'dea:')")
+                elif entry in canonical_ids:
+                    findings.append(f"{rid}: mapped_from[{i}] {entry!r} resolves to this catalogue's own record; mapped_from catalogues external entities")
+                continue
+            if not isinstance(entry, dict):
+                findings.append(f"{rid}: mapped_from[{i}] must be a structured instance (CR-IC-CAT-12) or a bare id")
+                continue
+            sid = entry.get("id") or ""
+            relid = entry.get("relationship") or ""
+            rationale = str(entry.get("rationale") or "").strip()
+            prov = entry.get("provenance") or {}
+            if not sid.startswith(ID_PREFIX):
+                findings.append(f"{rid}: mapped_from[{i}].id {sid!r} is not a canonical entity id (must start 'dea:')")
+            elif sid in canonical_ids:
+                findings.append(f"{rid}: mapped_from[{i}].id {sid!r} resolves to this catalogue's own record; mapped_from catalogues external entities")
+            if not relid.startswith("dea:relationship-"):
+                findings.append(f"{rid}: mapped_from[{i}].relationship {relid!r} is not a relationship instance id")
+            if not rationale:
+                findings.append(f"{rid}: mapped_from[{i}] ({sid}) has no classification rationale")
+            for k in ("asserted_at", "asserted_by", "verification_status"):
+                if not str(prov.get(k) or "").strip():
+                    findings.append(f"{rid}: mapped_from[{i}] ({sid}) provenance.{k} is missing")
+            if prov.get("verification_status") not in ("verified", "unverified"):
+                findings.append(f"{rid}: mapped_from[{i}] ({sid}) provenance.verification_status must be verified or unverified")
 
     if INBOX_PATH.exists():
         inbox = yaml.safe_load(INBOX_PATH.read_text(encoding="utf-8")) or {}

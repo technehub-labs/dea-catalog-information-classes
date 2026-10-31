@@ -20,6 +20,7 @@ Per the enterprise records-retention schedule; legal-hold overrides destruction.
 - **Evidence:** Enterprise information-security policy, classification scheme; owner: Information Security function.
 
 ## Mapped-from
-Entities in other catalogues that map to this class via `dea:maps-to` (inverse references; promoted by `CR-IC-CAT-10`):
-- `dea:information-asset-capability-catalog-integrity-report` (technehub-labs/dea-catalog-information-assets, `CR-IA-CAT-04`)
+Entities in other catalogues that map to this class via `dea:maps-to` (inverse references; promoted by `CR-IC-CAT-10`, structured by `CR-IC-CAT-12`):
+- `dea:information-asset-capability-catalog-integrity-report` (technehub-labs/dea-catalog-information-assets, `CR-IA-CAT-04`): aggregates gate findings and residual defects across the capability catalog; consumption is need-to-know (catalog stewards and review)
 
+All assertions: 2026-10-29 by Emmanuel A. Otchere, verification_status: verified.

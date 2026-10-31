@@ -7,6 +7,10 @@ Allocation is recorded in the OpenDEAM root model; see `metamodel-pointer.yaml`.
 
 ## [Unreleased]
 
+### Changed
+
+- `CR-IC-CAT-12`: structured crosswalk instances. `relationships.mapped_from` entries upgraded from bare ids to structured instances (`id`, `relationship`, `rationale`, `provenance`), mirroring verbatim the `dea:maps-to` assertions in `dea-catalog-information-assets`. Gate 8 validates the full structure; record READMEs now carry per-asset classification rationale. Cross-org sweep confirmed information-assets is the sole asserting catalogue.
+
 ### Added
 
 - `CR-IC-CAT-11`: control-reference resolution activated (stage 2). The controls catalogue populated under `CR-CTL-CAT-02` (20 canonical records, one per referenced id); `reconciliation/control-reference-registry.yaml` flips `resolution_active: true` with all 20 ids registered, so Gate 10 now resolves every `mandated_controls` reference instead of checking id form only.
