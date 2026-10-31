@@ -135,8 +135,35 @@
       "properties": {
         "mapped_from": {
           "type": "array",
-          "items": { "type": "string" },
-          "description": "Canonical ids of entities in other catalogues that map to this class via dea:maps-to."
+          "description": "Inverse dea:mapped-from instances (CR-IC-CAT-12): each entry mirrors the asserting record's maps-to relationship on the mapped side, carrying the source id, the relationship instance id, the classification rationale, and its provenance.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "relationship", "rationale", "provenance"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^dea:[a-z0-9-]+-[a-z0-9-]+$",
+                "description": "Canonical id of the asserting entity in its home catalogue."
+              },
+              "relationship": {
+                "type": "string",
+                "pattern": "^dea:relationship-[a-z0-9-]+$",
+                "description": "The relationship instance id on the mapped side."
+              },
+              "rationale": { "type": "string", "minLength": 1 },
+              "provenance": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["asserted_at", "asserted_by", "verification_status"],
+                "properties": {
+                  "asserted_at": { "type": "string" },
+                  "asserted_by": { "type": "string" },
+                  "verification_status": { "type": "string", "enum": ["verified", "unverified"] }
+                }
+              }
+            }
+          }
         }
       }
     }
